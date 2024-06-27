@@ -1,0 +1,70 @@
+CREATE DATABASE `wprg-projekt`;
+
+USE `wprg-projekt`;
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `imie` varchar(255) NOT NULL,
+  `nazwisko` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `haslo` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `produkty` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `marka` varchar(255) NOT NULL,
+  `model` varchar(255) NOT NULL,
+  `opis` text,
+  `cena` decimal(10,2) NOT NULL,
+  `kategoria` varchar(50) NOT NULL,
+  `obrazek` varchar(255),
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `opinie` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `produkt_id` int(11) NOT NULL,
+  `uzytkownik_id` int(11) NOT NULL,
+  `ocena` int(11) NOT NULL,
+  `komentarz` text,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`produkt_id`) REFERENCES `produkty`(`id`) ON DELETE CASCADE,
+  FOREIGN KEY (`uzytkownik_id`) REFERENCES `user`(`id`) ON DELETE CASCADE
+);
+
+CREATE TABLE `produkty_rozmiary` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `produkt_id` int(11) NOT NULL,
+  `rozmiar` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`produkt_id`) REFERENCES `produkty`(`id`) ON DELETE CASCADE
+);
+
+CREATE TABLE `zamowienia` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `shipping_name` varchar(255) NOT NULL,
+  `shipping_address` varchar(255) NOT NULL,
+  `shipping_city` varchar(100) NOT NULL,
+  `shipping_zip` varchar(20) NOT NULL,
+  `shipping_country` varchar(100) NOT NULL,
+  `payment_method` varchar(50) NOT NULL,
+  `contact_email` varchar(255) NOT NULL,
+  `contact_phone` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE CASCADE
+);
+
+CREATE TABLE `zamowienia_produkty` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `zamowienie_id` int(11) NOT NULL,
+  `produkt_id` int(11) NOT NULL,
+  `rozmiar` varchar(10),
+  `quantity` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`zamowienie_id`) REFERENCES `zamowienia`(`id`) ON DELETE CASCADE,
+  FOREIGN KEY (`produkt_id`) REFERENCES `produkty`(`id`) ON DELETE CASCADE
+);
