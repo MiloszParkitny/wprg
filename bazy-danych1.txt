@@ -117,3 +117,58 @@ INSERT INTO `produkty` (`marka`, `model`, `opis`, `cena`, `kategoria`, `obrazek`
 ('BEARBRICK', 'KEITH HARING #8 1000%', 'Figurka Bearbrick Keith Haring #8 1000% Szara', 2820.00, 'Akcesoria', 'images/bearbrick3.jpg'),
 ('BAPE A BATHING APE', 'TYPE 1 BAPEX WATCH GOLD BLACK', 'Zegarek BAPE A Bathing Ape Type 1 Bapex Watch Gold Black Złoty', 2650.00, 'Akcesoria', 'images/zegarek.jpg'),
 ('BAPE CLASSIC', 'TYPE 4 BAPEX WATCH SILVER WHITE', 'Zegarek BAPE Classic Type 4 Bapex Watch Silver White Srebrny', 3050.00, 'Akcesoria', 'images/zegarek1.jpg');
+
+-- Rozmiary dla kategorii Buty (losowe różne rozmiary)
+INSERT INTO `produkty_rozmiary` (`produkt_id`, `rozmiar`) VALUES
+(1, '39'), (1, '40'), (1, '41'), (1, '42'), -- Nike Dunk Low "Syracuse"
+(4, '38'), (4, '39'), (4, '40'), (4, '41'), -- Jordan 4 Retro Red Thunder
+(5, '40'), (5, '41'), (5, '42'), (5, '43'), -- Jordan 4 Retro Military Black
+(6, '41'), (6, '42'), (6, '43'), (6, '44'), -- Nike Air Max 1 Kasina Won-Ang Grey
+(7, '39'), (7, '40'), (7, '41'), (7, '42'), -- Jordan 4 Retro Thunder (2023)
+(8, '42'), (8, '43'), (8, '44'), (8, '45'), -- Jordan 4 Retro A Ma Maniére Violet Ore
+(9, '40'), (9, '41'), (9, '42'), (9, '43'), -- Adidas Yeezy Boost 350 V2 Zebra
+(10, '39'), (10, '40'), (10, '41'), (10, '42'), -- Adidas Yeezy Boost 350 V2 Black (Non-Reflective)
+(11, '41'), (11, '42'), (11, '43'), (11, '44'), -- Nike SB Dunk Low Sandy Bodecker "Ebay"
+(12, '38'), (12, '39'), (12, '40'), (12, '41'), -- Adidas Campus 80s South Park Towelie
+(13, '39'), (13, '40'), (13, '41'), (13, '42'), -- New Balance 550 White Blue Haze Rain Cloud
+(14, '40'), (14, '41'), (14, '42'), (14, '43'), -- Adidas Yeezy Boost 350 V2 Semi Frozen Yellow
+(15, '41'), (15, '42'), (15, '43'), (15, '44'), -- Adidas Yeezy Boost 350 V2 Core Black Red (2016/2022)
+(16, '39'), (16, '40'), (16, '41'), (16, '42'), -- New Balance 9060 White Navy
+(17, '40'), (17, '41'), (17, '42'), (17, '43'), -- Adidas Yeezy Slide Glow Green
+(18, '38'), (18, '39'), (18, '40'), (18, '41'), -- Crocs Classic Clog Coca-Cola Light
+(19, '41'), (19, '42'), (19, '43'), (19, '44'), -- Balenciaga Runner White Blue Yellow Grey Black
+(20, '42'), (20, '43'), (20, '44'), (20, '45'), -- Balenciaga X Adidas Triple S Black White
+(21, '40'), (21, '41'), (21, '42'), (21, '43'), -- A Bathing Ape Bape Sta White Black (2022)
+(22, '41'), (22, '42'), (22, '43'), (22, '44'); -- Louis Vuitton Nike Air Force 1 Low by Virgil Abloh White Red
+
+-- Rozmiary dla kategorii Ubrania (S, M, L)
+INSERT INTO `produkty_rozmiary` (`produkt_id`, `rozmiar`) VALUES
+(2, 'S'), (2, 'M'), (2, 'L'), -- Supreme Box Logo Tee
+(3, 'S'), (3, 'M'), (3, 'L'), -- Stussy Stock Logo Tee
+(23, 'S'), (23, 'M'), (23, 'L'), -- DENIM TEARS THE COTTON WREATH SWEATSHIRT
+(24, 'S'), (24, 'M'), (24, 'L'), -- YEEZY GAP ENGINEERED BY BALENCIAGA DOVE HOODIE
+(25, 'S'), (25, 'M'), (25, 'L'), -- TRAPSTAR DE-CON ARCH HOODIE
+(26, 'S'), (26, 'M'), (26, 'L'), -- ESSENTIALS HOODIE
+(27, 'S'), (27, 'M'), (27, 'L'), -- BAPE COLOR CAMO SHARK FULL ZIP HOODIE
+(28, 'S'), (28, 'M'), (28, 'L'), -- TRAPSTAR DREAM TEAM HOODIE
+(29, 'S'), (29, 'M'), (29, 'L'), -- DENIM TEARS X OFFSET SET IT OFF #1 T-SHIRT
+(30, 'S'), (30, 'M'), (30, 'L'), -- YEEZY GOSHA FUCKADIDAS JERSEY
+(31, 'S'), (31, 'M'), (31, 'L'), -- KAWS X UNIQLO UT SHORT SLEEVE GRAPHIC T-SHIRT
+(32, 'S'), (32, 'M'), (32, 'L'), -- SUPREME NYC TEE
+(33, 'S'), (33, 'M'), (33, 'L'); -- SUPREME MUTA TEE
+
+
+-- Rozmiary dla kategorii Akcesoria (One Size)
+INSERT INTO `produkty_rozmiary` (`produkt_id`, `rozmiar`) VALUES
+(34, 'One Size'), -- DOLCE & GABBANA CASA MOKA EXPRESS BIALETTI 190ML
+(35, 'One Size'), -- NIKE EVERYDAY PLAYGROUND 8P GRAPHIC DEFLATED
+(36, 'One Size'), -- SUPREME REPEAT ENGRAVED ZIPPO GOLD
+(37, 'One Size'), -- SUPREME LOGO ZIPPO RED
+(38, 'One Size'), -- SUPREME GLOW IN THE DARK ZIPPO WHITE
+(39, 'One Size'), -- VIRGIL ABLOH X IKEA MARKERAD "RECEIPT" Rug White/Black
+(40, 'One Size'), -- VIRGIL ABLOH X IKEA MARKERAD "WET GRASS" Rug Green
+(41, 'One Size'), -- BEARBRICK X MARVEL CARNAGE 100% & 400% SET
+(42, 'One Size'), -- BEARBRICK PINK PANTHER 100% & 400% SET
+(43, 'One Size'), -- BEARBRICK KEITH HARING #8 1000%
+(44, 'One Size'), -- BAPE A BATHING APE TYPE 1 BAPEX WATCH GOLD BLACK
+(45, 'One Size'); -- BAPE CLASSIC TYPE 4 BAPEX WATCH SILVER WHITE
